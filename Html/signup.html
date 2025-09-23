@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account</title>
+  <link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body>
+  <header class="header" style="padding: 6px 40px;">
+    <h1 class="logo">Sign Up</h1>
+    <nav class="nav">
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="form-container">
+    <h2>Create Account</h2>
+    <form id="signupForm" class="form">
+      <label for="name">Name</label>
+      <input type="text" id="name" placeholder="Enter your name"  >
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="example@email.com"  >
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="••••••••"  >
+      <label for="confirm-password">Confirm Password</label>
+      <input type="password" id="conf-password" placeholder="••••••••"  >
+      <button type="submit" class="btn">Create Account</button>
+    </form>
+
+    <div class="login-link">
+      Already have an account? <a href="login.html">Login</a>
+    </div>
+  </main>
+  <footer class="footer" style="padding: 6px 40px;">
+    <p>&copy; 2025 Hassan Alnakby | All rights reserved</p>
+  </footer>
+  <script>
+const loginForm = document.getElementById('signupForm');
+const nameInput = document.getElementById('name');
+const emailInput = document.getElementById('email');
+const passwordInput = document.getElementById('password');
+const confPassword = document.getElementById('conf-password');
+
+loginForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const nameValue = nameInput.value.trim();
+    const emailValue = emailInput.value.trim();
+    const passwordValue = passwordInput.value.trim();
+    const confPasswordValue = confPassword.value.trim();
+    if(!nameValue || !emailValue || !passwordValue || !confPasswordValue) {
+        alert('Please fill in all fields !');
+        return;
+    }
+    loginForm.reset();
+});
+
+  </script>
+</body>
+</html>
